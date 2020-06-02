@@ -1,0 +1,41 @@
+.swiper_index swiper {
+  width: 750rpx;
+  height: 340rpx;
+}
+.swiper_index swiper image {
+  width: 100%;
+}
+.cate_index {
+  display: flex;
+}
+.cate_index navigator {
+  flex: 1;
+  padding: 20rpx;
+}
+.cate_index navigator image {
+  width: 100%;
+}
+.floor_index .group_index .title_floor {
+  padding: 10rpx 0rpx;
+}
+.floor_index .group_index .title_floor image {
+  width: 100%;
+}
+.floor_index .group_index .floor_list {
+  overflow: hidden;
+}
+.floor_index .group_index .floor_list navigator {
+  float: left;
+  width: 33.33%;
+}
+.floor_index .group_index .floor_list navigator:nth-last-child(-n+4) {
+  height: 27.72711207vw;
+  padding-left: 10rpx;
+}
+.floor_index .group_index .floor_list navigator:nth-child(2),
+.floor_index .group_index .floor_list navigator:nth-child(3) {
+  padding-bottom: 10rpx;
+}
+.floor_index .group_index .floor_list navigator image {
+  width: 100%;
+}

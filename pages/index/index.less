@@ -1,0 +1,48 @@
+.swiper_index{
+  swiper{
+    width: 750rpx;
+    height: 340rpx;
+    image{
+      width: 100%;
+    }
+  }
+}
+.cate_index{
+  display: flex;
+  navigator{
+    flex: 1;
+    padding: 20rpx;
+    image {
+      width: 100%;
+    }
+  }
+}
+// 楼层样式
+.floor_index{
+  .group_index{
+    .title_floor{
+      padding: 10rpx 0rpx;
+      image{
+        width: 100%;
+      }
+    }
+    .floor_list{
+      overflow: hidden;
+      navigator{
+        float: left;
+        width: 33.33%;
+        &:nth-last-child(-n+4){
+          height: 33.33vw * 386 / 232 / 2;
+          padding-left: 10rpx;
+        }
+        &:nth-child(2),
+        &:nth-child(3){
+          padding-bottom: 10rpx;
+        }
+        image{
+          width: 100%;
+        }
+      }
+    }
+  }
+}

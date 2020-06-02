@@ -1,0 +1,36 @@
+.container{
+  .goods_item{
+    display: flex;
+    border-bottom: 2rpx solid #cccccc;
+    .image_container{
+      flex: 2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      image{
+        width: 70%;
+      }
+    }
+    .info_container{
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+
+      .goods_info{
+        // 两行文本 溢出隐藏
+        text-overflow: -o-ellipsis-lastline;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      .goods_price{
+        color:var(--themeColor);
+        font-size: 32rpx;
+      }
+    }
+  }
+}
