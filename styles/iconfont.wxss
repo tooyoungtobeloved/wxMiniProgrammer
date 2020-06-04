@@ -10,6 +10,7 @@
     /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
     url('iconfont.svg?t=1582471059799#iconfont') format('svg');
   /* iOS 4.1- */
+  
 }
 
 
@@ -57,7 +58,7 @@
 
 .icon-shoucang:before {
   content: "\e60c";
-  color: var(--themeColor);
+  color: #000000;
 }
 
 .icon-fenxiang:before {
@@ -99,7 +100,7 @@
   content: "\e61b";
 }
 
-.icon-yixianshi-:before {
+.icon-yixianshi:before {
   content: "\e616";
 }
 
