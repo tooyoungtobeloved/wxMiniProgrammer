@@ -49,6 +49,7 @@ Page({
     let cart = wx.getStorageSync("cart") || [];
     let index = cart.findIndex(v => v.goods_id===this.goodsInfo.goods_id);
     if(index === -1) {
+      this.goodsInfo.check = true;
       this.goodsInfo.num = 1;
       cart.push(this.goodsInfo)
     }else {

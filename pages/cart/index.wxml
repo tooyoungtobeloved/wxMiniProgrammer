@@ -1,1 +1,67 @@
+<view class="receive">
+  <view class="address_btn" wx:if="{{!address.userName}}">
+    <button type="primary" plain bindtap="chooseAddress">
+      添加收货地址
+    </button>
+  </view>
+  <view wx:else class="address">
+    <view class="user_info">
+      <view>{{address.userName}}</view>
+      <view>{{address.provinceName + address.cityName + address.countyName + address.detailInfo}}</view>
+    </view>
+    <view class="user_phone">
+      {{address.telNumber}}
+    </view>
+  </view>
+</view>
+<view class="cart_list">
+  <view class="cart_title">购物车</view>
+  <view class="cart_container" wx:if="{{cart.length}}">
+    <view class="cart_item"
+      wx:for="{{cart}}"
+      wx:key="goods_id"
+    >
+      <view class="check">
+        <checkbox-group data-id="{{item.goods_id}}" bindchange="handleItemChange">
+          <checkbox checked="{{item.check}}"></checkbox>
+        </checkbox-group>
+      </view>
+      <navigator class="img">
+        <image src="{{item.goods_small_logo||'https://api-hmugo-web.itheima.net/pyg/pic_floor01_5@2x.png' }}" mode="widthFix">
+        </image>
+      </navigator>
+      <view class="goods_info">
+        <view class="goods_intro">
+          {{item.goods_name}}</view>
+        <view class="info_wrap">
+          <view class="price">￥{{item.goods_price * item.num }}</view>
+          <view class="count">
+            <view class="sub" data-id="{{item.goods_id}}" bindtap="sub">-</view>
+            <view class="num">{{item.num}}</view>
+            <view class="add" data-id="{{item.goods_id}}" bindtap="add">+</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="empty" wx:else>
+    购物车还没有商品
+  </view>
+</view>
 
+
+<view class="btm_tool">
+  <view class="checkgroup">
+    <checkbox-group bindchange="handleAllCheck">
+      <checkbox checked="{{allCheck}}"></checkbox>
+      <text>全选</text>
+    </checkbox-group>
+  </view>
+  <view class="count">
+    合计<text class="price">￥{{goodsTotal}}</text>
+    <view class="info">包含运费</view>
+  </view>
+  <view class="pay" bindtap="handlePay">
+    结算{{goodsNum === 0 ? '': '('+goodsNum+')'}}
+  </view>
+</view>

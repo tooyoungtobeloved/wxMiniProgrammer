@@ -1,0 +1,140 @@
+page{
+  padding-bottom: 90rpx;
+}
+.receive{
+  .address_btn{
+    padding: 15rpx 0;
+    button{
+      width: 60%;
+    }
+  }
+  .address{
+    display: flex;
+    padding: 20rpx;
+    .user_info{
+      flex: 5;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      flex-wrap: nowrap;
+    }
+    .user_phone{
+      flex: 3;
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
+}
+/*商品列表*/
+.cart_list{
+  .cart_title{
+    color: var(--themeColor);
+    font-size: 34rpx;
+    font-weight: 600;
+    border-top: 1rpx solid currentColor;
+    border-bottom: 1rpx solid currentColor;
+    padding: 20rpx;
+  }
+  .cart_container{
+    .cart_item {
+      display: flex;
+      flex-direction: row;
+      padding: 10rpx 0;
+      border-bottom: 2rpx solid #cccccc;
+      .check{
+        flex: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .img{
+        flex: 2;
+        image{
+          width: 80%;
+        }
+      }
+      .goods_info{
+        flex: 4;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        .goods_intro {
+          display: -webkit-box;
+          overflow: hidden;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+          color: #666;
+        }
+        .info_wrap{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          .price{
+            color: var(--themeColor);
+            font-size: 32rpx;
+            font-weight: 600;
+          }
+          .count{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            text-align: center;
+            .sub {
+              border: 1rpx solid #ccc;
+              padding: 0 10rpx;
+            }
+            .num{
+              padding: 0 10rpx;
+            }
+            .add {
+              border: 1rpx solid #ccc;
+              padding: 0 10rpx;
+            }
+          }
+        }
+      }
+    }
+  }
+  .empty{
+    color: var(--themeColor);
+    font-size: 40rpx;
+    text-align: center;
+    padding-top: 20rpx;
+    font-weight: 800;
+  }
+}
+/*底部工具栏*/
+.btm_tool{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  height: 90rpx;
+  width: 100%;
+  border-top: 1rpx solid #ccc;
+  .checkgroup{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 2;
+  }
+  .count{
+    text-align: right;
+    flex: 5;
+    padding-right: 15rpx;
+    .price{
+      color: var(--themeColor);
+      font-size: 34rpx;
+      font-weight: 600;
+    }
+  }
+  .pay{
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    background-color: var(--themeColor);
+    color: #ffffff;
+    align-items: center;
+  }
+}
