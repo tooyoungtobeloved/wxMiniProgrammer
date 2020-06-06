@@ -1,2 +1,68 @@
 <!--pages/user/index.wxml-->
-<text>pages/user/index.wxml</text>
+<view class="userinfo_wrap">
+  <view class="userbg_wrap" wx:if="{{userinfo.avatarUrl}}">
+    <image class="bgimg" src="{{userinfo.avatarUrl}}" mode="widthFix"/>
+    <view class="userde_wrap">
+      <image class="usericon" src="{{userinfo.avatarUrl}}" mode="widthFix"/>
+      <view class="user_text">{{userinfo.nickName}}</view>
+    </view>
+  </view>
+  <view class="user_login" wx:else>
+    <navigator url="/pages/login/index">登录</navigator>
+  </view>
+</view>
+<view class="user_content">
+  <view class="user_main">
+    <view class="history_wrap">
+      <navigator>
+        <view class="num">0</view>
+        <view class="info">收藏的店铺</view>
+      </navigator>
+      <navigator>
+        <view class="num">0</view>
+        <view class="info">收藏的商品</view>
+      </navigator>
+      <navigator>
+        <view class="num">0</view>
+        <view class="info">关注的商品</view>
+      </navigator>
+      <navigator>
+        <view class="num">0</view>
+        <view class="info">我的足迹</view>
+      </navigator>
+    </view>
+    <view class="order_wrap">
+      <view class="order_title">
+        我的订单
+      </view>
+      <view class="order_content">
+        <navigator>
+          <text class="iconfont icon-kefu1"></text>
+          <view class="order_name">全部订单</view>
+        </navigator>
+        <navigator>
+          <text class="iconfont icon-kefu1"></text>
+          <view class="order_name">代付款</view>
+        </navigator>
+        <navigator>
+          <text class="iconfont icon-kefu1"></text>
+          <view class="order_name">待收货</view>
+        </navigator>
+        <navigator>
+          <text class="iconfont icon-kefu1"></text>
+          <view class="order_name">退款/退货</view>
+        </navigator>
+      </view>
+    </view>
+    <view class="address_wrap">收货地址管理</view>
+    <view class="app_info_wrap">
+      <view class="info_item contact">
+        <view class="text">联系客服</view>
+        <view class="num">400-618-4000</view>
+      </view>
+      <view class="info_item">意见反馈</view>
+      <view class="info_item">关于我们</view>
+    </view>
+    <view class="share">把应用分享给其他人</view>
+  </view>
+</view>

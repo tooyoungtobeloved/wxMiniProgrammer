@@ -1,0 +1,111 @@
+page{
+  background-color: #edece8;
+}
+
+.userinfo_wrap{
+  height: 40vh;
+  // height: 45vh;
+  background-color: var(--themeColor);
+  position: relative;
+  // background-color: #fff;
+  .userbg_wrap{
+    position: relative;
+    height: 100%;
+    .bgimg{
+      height: 50vh !important;
+      filter: blur(10rpx);
+    }
+    .userde_wrap{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      top: 30%;
+      .usericon{
+        border-radius: 50%;
+        width: 150rpx;
+        height: 150rpx;
+      }
+      .user_text{
+        padding-top: 20rpx;
+        color: #ffffff;
+        text-align: center;
+      }
+    }
+  }
+  .user_login{
+    padding: 10rpx 20rpx;
+    background-color: #fff;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 2rpx solid greenyellow;
+    color: greenyellow;
+    font-size: 32rpx;
+  }
+}
+.user_content{
+  position: relative;
+  .user_main{
+    position: absolute;
+    width: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -40rpx;
+    padding-bottom: 80rpx;
+    color: #666;
+    .history_wrap{
+      display: flex;
+      padding: 10rpx 0;
+      background-color: #fff;
+      navigator{
+        flex: 1;
+        text-align: center;
+        .num{
+          color: var(--themeColor);
+        }
+      }
+    }
+    .order_wrap{
+      margin-top: 20rpx;
+      background-color: #fff;
+      .order_title{
+        border-bottom: 2rpx solid #ccc;
+        padding: 20rpx 10rpx;
+      }
+      .order_content{
+        display: flex;
+        padding: 10rpx 0;
+        navigator{
+          flex: 1;
+          text-align: center;
+          .iconfont{
+            color: var(--themeColor);
+          }
+        }
+      }
+    }
+    .address_wrap{
+      padding: 20rpx 15rpx;
+      background-color: #fff;
+      margin-top: 20rpx;
+    }
+    .app_info_wrap{
+      margin-top: 20rpx;
+      .info_item{
+        border-bottom: 4rpx solid #edece8;
+        padding: 15rpx 10rpx;
+        background-color: #fff;
+      }
+      .contact{
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+    .share{
+      padding: 15rpx 10rpx;
+      background-color: #fff;
+      margin-top: 20rpx;
+    }
+  }
+}

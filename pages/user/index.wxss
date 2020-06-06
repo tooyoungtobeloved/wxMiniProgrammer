@@ -1,1 +1,108 @@
-/* pages/user/index.wxss */
+page {
+  background-color: #edece8;
+}
+.userinfo_wrap {
+  height: 40vh;
+  background-color: var(--themeColor);
+  position: relative;
+}
+.userinfo_wrap .userbg_wrap {
+  position: relative;
+  height: 100%;
+}
+.userinfo_wrap .userbg_wrap .bgimg {
+  height: 50vh !important;
+  filter: blur(10rpx);
+}
+.userinfo_wrap .userbg_wrap .userde_wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+}
+.userinfo_wrap .userbg_wrap .userde_wrap .usericon {
+  border-radius: 50%;
+  width: 150rpx;
+  height: 150rpx;
+}
+.userinfo_wrap .userbg_wrap .userde_wrap .user_text {
+  padding-top: 20rpx;
+  color: #ffffff;
+  text-align: center;
+}
+.userinfo_wrap .user_login {
+  padding: 10rpx 20rpx;
+  background-color: #fff;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2rpx solid greenyellow;
+  color: greenyellow;
+  font-size: 32rpx;
+}
+.user_content {
+  position: relative;
+}
+.user_content .user_main {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -40rpx;
+  padding-bottom: 80rpx;
+  color: #666;
+}
+.user_content .user_main .history_wrap {
+  display: flex;
+  padding: 10rpx 0;
+  background-color: #fff;
+}
+.user_content .user_main .history_wrap navigator {
+  flex: 1;
+  text-align: center;
+}
+.user_content .user_main .history_wrap navigator .num {
+  color: var(--themeColor);
+}
+.user_content .user_main .order_wrap {
+  margin-top: 20rpx;
+  background-color: #fff;
+}
+.user_content .user_main .order_wrap .order_title {
+  border-bottom: 2rpx solid #ccc;
+  padding: 20rpx 10rpx;
+}
+.user_content .user_main .order_wrap .order_content {
+  display: flex;
+  padding: 10rpx 0;
+}
+.user_content .user_main .order_wrap .order_content navigator {
+  flex: 1;
+  text-align: center;
+}
+.user_content .user_main .order_wrap .order_content navigator .iconfont {
+  color: var(--themeColor);
+}
+.user_content .user_main .address_wrap {
+  padding: 20rpx 15rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.user_content .user_main .app_info_wrap {
+  margin-top: 20rpx;
+}
+.user_content .user_main .app_info_wrap .info_item {
+  border-bottom: 4rpx solid #edece8;
+  padding: 15rpx 10rpx;
+  background-color: #fff;
+}
+.user_content .user_main .app_info_wrap .contact {
+  display: flex;
+  justify-content: space-between;
+}
+.user_content .user_main .share {
+  padding: 15rpx 10rpx;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
