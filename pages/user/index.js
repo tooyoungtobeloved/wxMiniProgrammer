@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    userinfo: {}
+    userinfo: {},
+    collectNum: 0
   },
 
   /**
@@ -27,8 +28,10 @@ Page({
    */
   onShow: function () {
     const userinfo = wx.getStorageSync("userinfo");
+    const collect = wx.getStorageSync("collect") || [];
     this.setData({
-      userinfo
+      userinfo,
+      collectNum: collect.length
     })
   },
 

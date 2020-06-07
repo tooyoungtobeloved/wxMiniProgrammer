@@ -39,8 +39,8 @@ swiper swiper-item image {
   justify-content: center;
   align-items: center;
 }
-.goods_intro .goods_collect .icon-shoucang {
-  color: #000000;
+.goods_intro .goods_collect .icon-shoucang1 {
+  color: var(--themeColor);
 }
 .goods_desc .goods_desc_title {
   font-size: 32rpx;

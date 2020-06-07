@@ -1,1 +1,22 @@
 /* pages/order/index.wxss */
+.orders{
+  
+}
+.orders .order_item{
+  width: 100%;
+  padding-top: 10rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.orders .order_item .item{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10rpx;
+}
+.price{
+  color: var(--themeColor);
+  font-size: 32rpx;
+}
+.value{
+  color: #666666;
+}
