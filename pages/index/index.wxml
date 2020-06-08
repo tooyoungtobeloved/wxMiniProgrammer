@@ -5,8 +5,8 @@
   <!-- 轮播图开始 -->
   <view class="swiper_index">
     <swiper autoplay circular indicator-dots>
-      <swiper-item wx:for="{{swiperList}}" wx:key="goods_id">
-        <navigator>
+      <swiper-item  wx:for="{{swiperList}}" wx:key="goods_id">
+        <navigator url="{{item.navigator_url}}">
           <image mode="widthFix" src="{{item.image_src}}" />
         </navigator>
         {{index}} {{item}}

@@ -1,0 +1,15 @@
+.image_container{
+  width: 90rpx;
+  height: 90rpx;
+  position: relative;
+  margin-left: 20rpx;
+}
+.image_container image{
+  width: 100%;
+}
+.image_container icon{
+  position: absolute;
+  right: -20rpx;
+  top: -20rpx;
+  z-index: 90;
+}

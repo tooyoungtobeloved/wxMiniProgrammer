@@ -3,7 +3,6 @@ import { promisifyAll, promisify } from "../../request/wx-promise-pro.js"
 // promisify all wx‘s api
 promisifyAll()
 // promisify single api
-promisify(wx.getSystemInfo)().then(console.log)
 Page({
   /**
    * 页面的初始数据

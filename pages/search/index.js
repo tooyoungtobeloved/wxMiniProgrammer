@@ -1,13 +1,18 @@
 // pages/search/index.js
+import { promisifyAll, promisify } from "../../request/wx-promise-pro.js"
+// promisify all wx's api
+promisifyAll()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    goods: [],
+    isFocus: false,
+    inputValue: ""
   },
-
+  Timer: -1,
   /**
    * 生命周期函数--监听页面加载
    */
@@ -28,39 +33,49 @@ Page({
   onShow: function () {
 
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+  handleInput(e) {
+    const { value } = e.detail;
+    if(!value.trim()) {
+      this.setData({
+        isFocus: false,
+        goods: []
+      })
+      clearTimeout(this.Timer)
+      return
+    };
+    this.setData({
+      isFocus:true
+    })
+    clearTimeout(this.Timer)
+    this.Timer = setTimeout(() => {
+      this.query(value)
+    }, 1000);
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  query(value){
+    wx.pro.request({
+      url: "https://api-hmugo-web.itheima.net/api/public/v1/goods/qsearch",
+      data: { "query": value }
+    }).then(res => {
+      const { message } = res.data;
+      if(message.length === 0){
+        wx.showToast({
+          title: "没有查到数据",
+          icon: "success",
+          mask: true
+        })
+      }
+      this.setData({
+        goods:message
+      })
+    })
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  // 点击取消按钮
+  handleCancel() {
+    this.setData({
+      inputValue: "",
+      goods: [],
+      isFocus: false
+    })
+    clearTimeout(this.Timer);
   }
 })

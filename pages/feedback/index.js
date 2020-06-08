@@ -5,62 +5,50 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    tabs: [
+      {
+        id: 0,
+        value: "体验问题",
+        isActive: true,
+      },
+      {
+        id: 0,
+        value: "商品、商家投诉",
+        isActive: false,
+      }
+    ],
+    chooseImgs: []
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  itemTabChange(e) {
+    const { index } = e.detail;
+    let { tabs } = this.data;
+    tabs.map((item, i) => {
+      i === index ? (item.isActive = true) : (item.isActive = false);
+    });
+    this.setData({
+      tabs,
+    });
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  handleChooseImage() {
+    wx.chooseImage({
+      count: 9, // 最多可以选择的图片张数，默认9
+      sizeType: ['original', 'compressed'], // original 原图，compressed 压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+      success: (res) =>{
+        // success
+        this.setData({
+          chooseImgs: [...this.data.chooseImgs, ...res.tempFilePaths]
+        })
+      }
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  deleteImg(e){
+    const { src } = e.detail
+    let { chooseImgs } = this.data;
+    const index = chooseImgs.findIndex(i => i.tempFilePaths === src)
+    chooseImgs.splice(index, 1);
+    this.setData({
+      chooseImgs
+    })
   }
 })

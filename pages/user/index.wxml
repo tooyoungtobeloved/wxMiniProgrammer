@@ -60,7 +60,7 @@
         <view class="text">联系客服</view>
         <view class="num">400-618-4000</view>
       </view>
-      <view class="info_item">意见反馈</view>
+      <navigator url="/pages/feedback/index" class="info_item">意见反馈</navigator>
       <view class="info_item">关于我们</view>
     </view>
     <view class="share">把应用分享给其他人</view>
